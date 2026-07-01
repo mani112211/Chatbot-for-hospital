@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ur-PK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediBot - FAQ & Patient Help Desk</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-decor">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar / Brand Header -->
+        <header class="app-header">
+            <div class="brand-section">
+                <div class="brand-logo">🩺</div>
+                <div class="brand-text">
+                    <h1 id="bot-name">MediBot</h1>
+                    <p id="bot-tagline">CityCare Hospital Assistant</p>
+                </div>
+            </div>
+            <div class="header-badges">
+                <span class="badge active-badge"><span class="dot-pulse"></span>Online 24/7</span>
+                <span class="badge emg-badge" id="emg-badge">🚑 Emergency: 1122</span>
+            </div>
+        </header>
+
+        <main class="main-layout">
+            <!-- Left Side: Interactive FAQ Directory -->
+            <section class="faq-section">
+                <div class="section-card">
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="faq-search" placeholder="Search FAQs or topics (e.g. OPD, visiting, billing)...">
+                        <button id="clear-search" class="clear-search-btn">×</button>
+                    </div>
+
+                    <div class="faq-categories" id="faq-categories">
+                        <button class="category-tab active" data-category="all">All Info</button>
+                        <button class="category-tab" data-category="appointments">Appointments</button>
+                        <button class="category-tab" data-category="timings">Timings</button>
+                        <button class="category-tab" data-category="services">Services & Labs</button>
+                        <button class="category-tab" data-category="billing">Billing & Insurance</button>
+                    </div>
+
+                    <div class="faq-accordion" id="faq-accordion">
+                        <!-- Dynamic FAQs loaded here -->
+                        <div class="loading-placeholder">
+                            <div class="spinner"></div>
+                            <p>Loading FAQs...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Cards Grid -->
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h4>Hospital Address</h4>
+                            <p id="hospital-address">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h4>General Helpline</h4>
+                            <p id="hospital-helpline">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕘</div>
+                        <div class="info-content">
+                            <h4>OPD Timings</h4>
+                            <p>Mon - Sat: 9 AM - 5 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side: Chatbot Panel -->
+            <section class="chat-section">
+                <div class="chat-card">
+                    <div class="chat-header">
+                        <div class="chat-header-avatar">🩺</div>
+                        <div class="chat-header-info">
+                            <h3>Live Chat Assistant</h3>
+                            <span class="status-indicator" id="provider-status">Connecting...</span>
+                        </div>
+                        <button class="btn-clear-chat" id="btn-clear" title="Clear Chat">🗑️</button>
+                    </div>
+
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Messages render dynamically -->
+                    </div>
+
+                    <!-- Recommended chips container -->
+                    <div class="chips-container" id="chips-container">
+                        <span class="chips-title">Suggested:</span>
+                        <div class="chips-wrapper" id="chips-wrapper">
+                            <!-- Clickable suggestion chips -->
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <textarea id="chat-input" rows="1" placeholder="Type a message or click an FAQ..."></textarea>
+                        <button id="send-button" class="send-btn" disabled>
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>⚠️ <strong>Important Medical Disclaimer:</strong> This chatbot provides general information only. It cannot diagnose illnesses, prescribe treatments, or substitute professional medical advice. In case of an emergency, call <strong id="footer-emg">1122</strong> immediately.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

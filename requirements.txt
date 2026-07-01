@@ -1,0 +1,7 @@
+streamlit>=1.33
+python-dotenv>=1.0
+markdown>=3.4
+# Google Gemini API (current SDK). App runs in offline demo mode if no key is set.
+google-genai>=1.0
+flask>=3.0.0
+flask-cors>=4.0.0
